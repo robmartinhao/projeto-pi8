@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BASE_URL } from "utils/requests";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
@@ -12,6 +12,7 @@ const Home = () => {
     let latp = "";
     let longp = "";
 
+
     function showPosition(position: any) {
         const lat = position.coords.latitude;
         const long = position.coords.longitude;
@@ -19,8 +20,8 @@ const Home = () => {
         longp = long;
     }
 
-    let precipitacao = 0;
-    let ventania = 0;
+    const precipitacao = useRef(0);
+    const ventania = useRef(0);
 
     const [page, setPage] = useState<Clima>();
 
@@ -29,14 +30,14 @@ const Home = () => {
             .then((response) => {
                 console.log(response.data);
 
-                precipitacao = response.data.current.precip_mm;
-                ventania = response.data.current.precip_mm;
+                precipitacao.current = response.data.current.precip_mm;
+                ventania.current = response.data.current.wind_kph;
 
                 setPage(response.data);
 
 
             });
-    });
+    },[precipitacao, ventania, latp, longp]);
 
     return (
         <>
@@ -82,17 +83,17 @@ const Home = () => {
                 </table>
             </div>
             <div className="padding">
-                {precipitacao > 25 &&
+                {precipitacao.current > 25 &&
                     <div className="text-third">
                         Alerta - Risco de Enchente e Alagamentos
                     </div>
                 }
-                {ventania > 14 &&
+                {ventania.current > 14 &&
                     <div className="text-third">
                         Alerta - Risco de Ventania
                     </div>
                 }
-                {ventania < 14 && precipitacao < 25 && 
+                {ventania.current < 14 && precipitacao.current < 25 && 
                     <div className="text-secondary">
                         Sem  riscos de Ventania, Enchente e Alagamentos
                     </div>
