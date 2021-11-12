@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 :root {
     --color-primary: #4169e1;
+    --color-secondary: #41a1e1;
+    --color-third: #ff0000;
 }
 
 html, body {
     height: 100%;
     font-family: "Ubuntu", sans-serif;
+}
+
+.padding {
+    padding: 30px;
 }
 
 #root {
@@ -29,4 +35,22 @@ html, body {
 
 .text-primary {
     color: var(--color-primary) !important;
+}
+
+bg-secondary {
+    background-color: var(--color-secondary) !important;
+}
+
+.text-secondary {
+    color: var(--color-secondary) !important;
+    font-size: x-large;
+}
+
+bg-third {
+    background-color: var(--color-third) !important;
+}
+
+.text-third {
+    color: var(--color-third) !important;
+    font-size: x-large;
 }

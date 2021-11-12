@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://projeto-pi8.herokuapp.com'
