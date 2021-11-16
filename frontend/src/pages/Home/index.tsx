@@ -9,9 +9,8 @@ const Home = () => {
 
     navigator.geolocation.getCurrentPosition(showPosition);
 
-    let latp = "";
-    let longp = "";
-
+    let latp = useRef(0);
+    let longp = useRef(0);
 
     function showPosition(position: any) {
         const lat = position.coords.latitude;
