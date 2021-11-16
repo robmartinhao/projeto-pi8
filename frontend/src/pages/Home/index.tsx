@@ -41,7 +41,7 @@ const Home = () => {
     return (
         <>
             <NavBar />
-            <div className="table-responsive padding">
+            <div className="container padding">
                 <table className="table table-striped table-sm">
                     <thead>
                         <tr>
