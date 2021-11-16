@@ -78,7 +78,7 @@ const Home = () => {
                     </tbody>
                 </table>
             </div>
-            <div className="padding">
+            <div className="container padding">
                 {precipitacao.current > 25 &&
                     <div className="text-third">
                         Alerta - Risco de Enchente e Alagamentos

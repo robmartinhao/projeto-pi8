@@ -11,7 +11,7 @@ html, body {
 }
 
 .padding {
-    padding: 30px;
+    padding: 10px;
 }
 
 #root {
@@ -39,18 +39,24 @@ html, body {
 
 bg-secondary {
     background-color: var(--color-secondary) !important;
+    font-size: medium;
 }
 
 .text-secondary {
     color: var(--color-secondary) !important;
-    font-size: x-large;
+    font-size: medium;
 }
 
 bg-third {
     background-color: var(--color-third) !important;
+    font-size: medium;
 }
 
 .text-third {
     color: var(--color-third) !important;
+    font-size: medium;
+}
+
+h1{
     font-size: x-large;
 }
