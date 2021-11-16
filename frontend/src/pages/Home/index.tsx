@@ -51,16 +51,16 @@ const Home = () => {
                     <tbody>
                         <tr>
                             <td>Temperatura</td>
-                            <td>1 - {page?.current.temp_c}</td>
+                            <td>1 - {page?.current?.temp_c}</td>
                         </tr>
                         <tr>
                             <td>Precipitação</td>
-                            <td>2 - {page?.current.precip_mm}</td>
+                            <td>2 - {page?.current?.precip_mm}</td>
 
                         </tr>
                         <tr>
                             <td>Velocidade do Vento</td>
-                            <td>3 - {page?.current.wind_kph}</td>
+                            <td>3 - {page?.current?.wind_kph}</td>
                         </tr>
                         <tr>
                             <td>Nome do local</td>
