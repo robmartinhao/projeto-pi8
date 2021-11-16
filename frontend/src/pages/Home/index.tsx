@@ -9,14 +9,14 @@ const Home = () => {
 
     navigator.geolocation.getCurrentPosition(showPosition);
 
-    let latp = useRef(0);
-    let longp = useRef(0);
+    const latp = useRef(0);
+    const longp = useRef(0);
 
     function showPosition(position: any) {
         const lat = position.coords.latitude;
         const long = position.coords.longitude;
-        latp = lat;
-        longp = long;
+        latp.current = lat;
+        longp.current = long;
     }
 
     const precipitacao = useRef(0);
@@ -25,7 +25,7 @@ const Home = () => {
     const [page, setPage] = useState<Clima>();
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/clima/${latp},${longp}`)
+        axios.get(`${BASE_URL}/clima/${latp.current},${longp.current}`)
             .then((response) => {
                 console.log(response.data);
 
