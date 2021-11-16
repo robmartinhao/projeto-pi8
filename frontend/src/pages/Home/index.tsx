@@ -27,16 +27,13 @@ const Home = () => {
     useEffect(() => {
         axios.get(`${BASE_URL}/clima/${latp.current},${longp.current}`)
             .then((response) => {
-                console.log(response.data);
+                
+                setPage(response.data);
 
                 precipitacao.current = response.data.current.precip_mm;
                 ventania.current = response.data.current.wind_kph;
-
-                setPage(response.data);
-
-
             });
-    },[precipitacao, ventania]);
+    },[precipitacao, ventania, page?.location.lat, page?.location.lon]);
 
     return (
         <>
