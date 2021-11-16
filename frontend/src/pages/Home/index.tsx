@@ -36,7 +36,7 @@ const Home = () => {
 
 
             });
-    },[precipitacao, ventania, latp, longp]);
+    },[precipitacao, ventania]);
 
     return (
         <>
@@ -51,32 +51,32 @@ const Home = () => {
                     <tbody>
                         <tr>
                             <td>Temperatura</td>
-                            <td>{page?.current.temp_c}</td>
+                            <td>1 - {page?.current.temp_c}</td>
                         </tr>
                         <tr>
                             <td>Precipitação</td>
-                            <td>{page?.current.precip_mm}</td>
+                            <td>2 - {page?.current.precip_mm}</td>
 
                         </tr>
                         <tr>
                             <td>Velocidade do Vento</td>
-                            <td>{page?.current.wind_kph}</td>
+                            <td>3 - {page?.current.wind_kph}</td>
                         </tr>
                         <tr>
                             <td>Nome do local</td>
-                            <td>{page?.location?.name}</td>
+                            <td>4 - {page?.location?.name}</td>
                         </tr>
                         <tr>
                             <td>Região</td>
-                            <td>{page?.location?.region}</td>
+                            <td>5 - {page?.location?.region}</td>
                         </tr>
                         <tr>
                             <td>Latitude</td>
-                            <td>{page?.location?.lat}</td>
+                            <td>6 - {page?.location?.lat}</td>
                         </tr>
                         <tr>
                             <td>Longitude</td>
-                            <td>{page?.location?.lon}</td>
+                            <td>7 - {page?.location?.lon}</td>
                         </tr>
                     </tbody>
                 </table>
